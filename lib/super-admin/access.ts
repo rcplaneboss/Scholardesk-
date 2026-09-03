@@ -7,6 +7,10 @@ export type SuperAdminAccess =
   | { status: "unavailable"; userId: string }
   | { status: "authorized"; userId: string };
 
+/**
+ * Checks the current user's super admin access status.
+ * @returns The access status object indicating authentication and authorization level
+ */
 export async function getSuperAdminAccess(): Promise<SuperAdminAccess> {
   const supabase = await createSupabaseServerClient();
   const { data: { user } } = await supabase.auth.getUser();
@@ -17,6 +21,10 @@ export async function getSuperAdminAccess(): Promise<SuperAdminAccess> {
   return { status: "authorized", userId: user.id };
 }
 
+/**
+ * Enforces super admin access by redirecting users without proper authorization.
+ * @param access - The access status to enforce
+ */
 export function enforceSuperAdminAccess(access: SuperAdminAccess) {
   if (access.status === "unauthenticated") redirect("/login?next=/super-admin");
   if (access.status === "forbidden") redirect("/find-school?error=platform-access");

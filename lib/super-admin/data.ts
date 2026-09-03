@@ -15,10 +15,21 @@ export const platformMetrics: PlatformMetric[] = [
   { label: "Payments recorded", value: "Unavailable", detail: "Requires payment data" },
 ];
 
+/**
+ * Retrieves the list of all schools on the platform.
+ * @returns An array of platform schools (currently empty until schema is connected)
+ */
 export async function listPlatformSchools(): Promise<PlatformSchool[]> {
   return [];
 }
 
+/**
+ * Updates a school's module access configuration.
+ * @param schoolId - The school's unique identifier
+ * @param module - The module key to update
+ * @param enabled - Whether the module should be enabled
+ * @returns An error result indicating the operation is unavailable
+ */
 export async function updateSchoolModule(
   schoolId: string,
   module: ModuleKey,
@@ -30,6 +41,10 @@ export async function updateSchoolModule(
   return { ok: false, message: "Module configuration is unavailable until the school schema is connected." };
 }
 
+/**
+ * Returns the default module state with all modules enabled.
+ * @returns An object with all modules (attendance, fees, results) set to true
+ */
 export function defaultModuleState(): ModuleState {
   return { attendance: true, fees: true, results: true };
 }
