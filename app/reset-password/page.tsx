@@ -3,6 +3,10 @@ import { redirect } from "next/navigation";
 import { ArrowLeft, BookOpen } from "lucide-react";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 
+/**
+ * Server action that sends a password recovery email to the specified address.
+ * @param formData - Form data containing the email field
+ */
 async function sendRecoveryEmail(formData: FormData) {
   "use server";
   const email = String(formData.get("email") ?? "");

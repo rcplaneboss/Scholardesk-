@@ -4,6 +4,10 @@ import { ArrowLeft, BookOpen, Eye, LockKeyhole } from "lucide-react";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
 import { resolveUserDestination } from "@/lib/auth";
 
+/**
+ * Server action that handles user sign-in with email and password.
+ * @param formData - Form data containing email and password fields
+ */
 async function signIn(formData: FormData) {
   "use server";
   const email = String(formData.get("email") ?? "");
