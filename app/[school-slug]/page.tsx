@@ -9,5 +9,5 @@ export default async function TenantPage({ params }: { params: Promise<{ "school
   const supabase = await createSupabaseServerClient();
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect(`/login?next=/${slug}`);
-  redirect("/find-school?message=tenant-setup");
+  redirect(`/find-school?message=tenant-setup&school=${encodeURIComponent(tenant.name)}`);
 }

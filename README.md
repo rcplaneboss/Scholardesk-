@@ -10,7 +10,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open http://localhost:3000. Initial routes are `/`, `/login`, `/find-school`, and `/{school-slug}`.
+Open http://localhost:3000. Initial routes are `/`, `/login`, `/reset-password`, `/find-school`, and `/{school-slug}`.
 
 ## Checks
 
