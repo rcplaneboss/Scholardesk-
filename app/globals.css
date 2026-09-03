@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+:root { --navy: #0f1b3d; --navy-soft: #1d315f; --gold: #d4af37; --gold-soft: #f6edcf; --paper: #faf8f3; --beige: #f3efe6; --ink: #18233f; --muted: #68738a; --line: #e6e1d7; --success: #168a4a; --danger: #dc2626; --shadow: 0 16px 40px rgb(15 27 61 / 8%); }
+@theme inline { --color-navy: var(--navy); --color-navy-soft: var(--navy-soft); --color-gold: var(--gold); --color-gold-soft: var(--gold-soft); --color-paper: var(--paper); --color-beige: var(--beige); --color-ink: var(--ink); --color-muted: var(--muted); --color-line: var(--line); --color-success: var(--success); --color-danger: var(--danger); --font-sans: var(--font-jakarta); --font-serif: var(--font-lora); }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-jakarta), sans-serif; }
+button, input { font: inherit; }
+button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid rgb(212 175 55 / 45%); outline-offset: 3px; }
